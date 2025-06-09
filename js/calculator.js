@@ -62,6 +62,19 @@ numberButtons.forEach((button) => {
   });
 });
 
+let backspaceButtons = document.querySelectorAll(".backspace-button");
+backspaceButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (calculatorText !== "0") {
+      calculatorText = calculatorText.slice(0, -1);
+    }
+    if (calculatorText == "") {
+      calculatorText = "0";
+    }
+    refreshView();
+  });
+});
+
 let operationButtons = document.querySelectorAll(".operation-button");
 operationButtons.forEach((button) => {
   button.addEventListener("click", () => {
